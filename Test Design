@@ -1,0 +1,89 @@
+Assignment 4: Test Design Techniques
+1. Black-box vs White-box Testing
+
+Black-box Testing 🏴
+
+Focus: Tests the functionality of the software without knowing its internal code structure.
+
+Goal: Verify outputs for given inputs.
+
+Example: Checking if the login page accepts valid credentials and rejects invalid ones without looking at the source code.
+
+White-box Testing ⚪
+
+Focus: Tests internal code logic, structure, and paths.
+
+Goal: Ensure each line, branch, and condition is executed and works as intended.
+
+Example: Testing all if-else paths in a payment processing function.
+
+Key Difference: Black-box = “What does it do?”, White-box = “How does it do it?”.
+
+2. Equivalence Partitioning (EP)
+
+Definition: Dividing input data into groups (partitions) where all values in one group are expected to behave the same.
+
+Purpose: Reduce the number of test cases while still ensuring good coverage.
+
+Example:
+Suppose an age field accepts 18–60 years:
+
+Partition 1: Below valid range (e.g., 10)
+
+Partition 2: Within valid range (e.g., 30)
+
+Partition 3: Above valid range (e.g., 70)
+Only 3 test cases are needed instead of testing every age.
+
+3. Boundary Value Analysis (BVA)
+
+Definition: Testing values at the boundaries of input ranges because errors often occur there.
+
+Example:
+For an input range 1–100:
+
+Lower boundary tests: 0, 1, 2
+
+Upper boundary tests: 99, 100, 101
+
+Why It Works: Developers often make mistakes handling "just inside" or "just outside" values.
+
+4. Decision Table Testing
+
+Definition: A tabular method to represent and test complex business rules with multiple conditions and actions.
+
+Example:
+Loan Approval
+
+Condition: Credit Score ≥ 700	Condition: Income ≥ $50k	Action: Approve Loan
+Y	Y	Yes
+Y	N	No
+N	Y	No
+N	N	No
+
+Benefit: Ensures all combinations of conditions are tested.
+
+5. State Transition Testing
+
+Definition: Testing software behavior when moving between different states based on events/inputs.
+
+Example:
+ATM Machine
+
+State 1: Card Inserted → State 2: Enter PIN
+
+State 2: Correct PIN → State 3: Access Account
+
+State 2: Incorrect PIN (3 times) → State 4: Card Blocked
+
+Why It’s Useful: Perfect for systems where behavior depends on past events (e.g., authentication, workflows).
+
+✅ Summary:
+
+Black-box & White-box testing address different perspectives of quality.
+
+Equivalence Partitioning & Boundary Value Analysis cut down test cases while maintaining coverage.
+
+Decision Tables ensure complex rules are fully tested.
+
+State Transition Testing captures real-world usage flows.
