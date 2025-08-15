@@ -1,0 +1,105 @@
+# Week4-assignment-SWT
+📝 Assignment 4: Test Design Techniques 🎯
+Student Name: Boipelo Sekoena
+Course: Software Testing
+Date: 30 June 2025
+
+🔍 Introduction
+In this assignment, I explore five essential test design techniques that improve the quality and effectiveness of software testing. These include black-box and white-box testing, equivalence partitioning, boundary value analysis, decision tables, and state transition testing. Each technique helps detect defects early and reduce the number of test cases needed.
+
+⚫⚪ 1. Black-box vs White-box Testing
+🔹 Explanation:
+Feature	Black-box Testing 🏴	White-box Testing ⚪
+Code Knowledge	Not required	Required
+Focus	Functional behavior	Internal code logic
+Techniques	BVA, EP, Decision Tables	Path, Loop, Branch Testing
+
+🔹 Real-life Example:
+Black-box: Testing an ATM without knowing its code — just testing card input and cash output.
+
+White-box: Testing the login logic inside the ATM's software.
+
+🧩 2. Equivalence Partitioning (EP)
+🔹 Explanation:
+This technique divides input data into valid and invalid groups (partitions), and one test is taken from each.
+
+🔹 Example:
+A field accepts values from 1 to 100.
+
+Partition Type	Input Range	Example Value
+Valid	1–100	50
+Invalid	<1	0
+Invalid	>100	150
+🔹 Test Cases:
+Input = 50 (Valid)
+
+Input = 0 (Invalid)
+
+Input = 150 (Invalid)
+
+🚧 3. Boundary Value Analysis (BVA)
+🔹 Explanation:
+Focuses on values at the edges of input boundaries.
+
+🔹 Example:
+Input field: 1–100
+
+Test Case	Value	Reason
+Min-1	0	Just below lower limit
+Min	1	Lower boundary
+Min+1	2	Just above lower limit
+Max-1	99	Just below upper limit
+Max	100	Upper boundary
+Max+1	101	Just above upper limit
+
+📊 4. Decision Table Testing
+🔹 Explanation:
+Used when rules are complex. Shows all possible combinations of conditions and actions.
+
+🔹 Example: Access Control System
+Rule	Has ID Card	Knows Password	Access Granted?
+1	Yes	Yes	Yes
+2	Yes	No	No
+3	No	Yes	No
+4	No	No	No
+
+🔄 5. State Transition Testing
+🔹 Explanation:
+Used when the system changes state in response to events. Helps test valid and invalid transitions.
+🔹 Example: Simple Login System
+States:
+
+Logged Out
+
+Enter Username
+
+Enter Password
+
+Logged In
+
+Transitions:
+
+Start → Enter Username
+
+Username OK → Enter Password
+
+Password OK → Logged In
+
+Wrong Input → Error Message → Retry
+
+🔹 Test Cases:
+Current State	Input	Next State	Expected Output
+Logged Out	Enter Username	Enter Password	Prompt for password
+Enter Password	Correct Password	Logged In	Welcome message
+Enter Password	Wrong Password	Enter Password	Error message
+
+📈 State Transition Diagram (Login System)
+css
+
+[Start]
+   ↓
+[Enter Username] → [Enter Password] → [Logged In]
+                            ↑
+                [Wrong Password] → [Error Message]
+✅ Conclusion
+By applying these techniques, I learned how to improve test efficiency, reduce test cases, and uncover hidden bugs. These design methods are especially useful for both manual and automated testing and ensure broader test coverage.
